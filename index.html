@@ -18,60 +18,107 @@
 
     <!-- App Container -->
     <div class="min-h-screen">
-        
+
         <!-- Header with Integrated Navigation -->
-        <header class="navbar z-50 flex justify-center" style="opacity:0; transform: translateY(-100px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4,0,0.2,1); ">
-            <div class="container flex justify-between items-center p-3">
-            <!-- Logo -->
-            <div class="text-2xl md:text-3xl font-bold text-black">
-                <a href="index.html" target="_self">GoSikkim</a>
-            </div>
+       <header class="navbar z-50 flex justify-center" style="opacity:0; transform: translateY(-100px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4,0,0.2,1);">
+    <div class="container flex flex-col justify-between items-center p-3 w-full">
 
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="#holiday-ideas" class="text-gray-800 hover:text-black font-semibold">Holiday Ideas</a>
-                <a href="#packages" class="text-gray-800 hover:text-black font-semibold">Packages</a>
-                <a href="#places-to-stay" class="text-gray-800 hover:text-black font-semibold">Places to Stay</a>
-                <a href="#weekend-getaways" class="text-gray-800 hover:text-black font-semibold">Weekend Getaways</a>
-                <a href="#map" class="text-gray-800 hover:text-black font-semibold">Map</a>
-                <a href="#" class="border-2 border-black text-black font-bold py-2 px-6 rounded-lg hover:bg-black hover:text-white transition-colors duration-300">
+        <!-- Left Section: navbar1 -->
+        <div class="navbar1 flex flex-col space-y-2 relative">
+  <!-- Toggle Button -->
+  <button onclick="menu.hidden ^= 1">☰</button>
+
+  <!-- Main Menu -->
+  <div id="menu" hidden>
+    <a href="#holiday-ideas" class="text-gray-800 hover:text-black font-semibold">Holiday Ideas</a>
+    <a href="#packages" class="text-gray-800 hover:text-black font-semibold">Packages</a>
+
+    <!-- Dropdown -->
+    <div class="relative group">
+      <button class="text-gray-800 hover:text-black font-semibold flex items-center">
+        Destinations
+        <span class="ml-1">▼</span>
+      </button>
+      <div
+        class="absolute left-0 mt-1 hidden w-40 bg-white border rounded-lg shadow-lg group-hover:block z-10"
+      >
+        <a href="#mountains" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mountains</a>
+        <a href="#beaches" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Beaches</a>
+        <a href="#cities" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Cities</a>
+      </div>
+    </div>
+    <!-- End Dropdown -->
+
+    <a href="#places-to-stay" class="text-gray-800 hover:text-black font-semibold">Places to Stay</a>
+    <a href="#weekend-getaways" class="text-gray-800 hover:text-black font-semibold">Weekend Getaways</a>
+    <a href="#map" class="text-gray-800 hover:text-black font-semibold">Map</a>
+
+    <!-- Login Button -->
+    <a
+      href="#"
+      class="mt-4 w-full text-center border-2 border-black text-black font-bold py-2 px-6 rounded-lg hover:bg-black hover:text-white transition-colors duration-300"
+    >
+      Login
+    </a>
+  </div>
+</div>
+
+
+        <!-- Logo -->
+        <div class="text-2xl md:text-3xl font-bold text-black">
+            <a href="index.html" target="_self">GoSikkim</a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex flex-row items-center space-x-8">
+            <a href="#holiday-ideas" class="text-gray-800 hover:text-black font-semibold">Holiday Ideas</a>
+            <a href="#packages" class="text-gray-800 hover:text-black font-semibold">Packages</a>
+            <a href="#places-to-stay" class="text-gray-800 hover:text-black font-semibold">Places to Stay</a>
+            <a href="#weekend-getaways" class="text-gray-800 hover:text-black font-semibold">Weekend Getaways</a>
+            <a href="#map" class="text-gray-800 hover:text-black font-semibold">Map</a>
+            <a href="#" class="border-2 border-black text-black font-bold py-2 px-6 rounded-lg hover:bg-black hover:text-white transition-colors duration-300">
                 Login
-                </a>
-            </nav>
+            </a>
+        </nav>
 
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-black focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-black focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
-                </button>
-            </div>
-            </div>
+            </button>
+        </div>
+    </div>
 
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden bg-white">
-            <nav class="flex flex-col items-center space-y-4 p-4 border-t border-gray-200">
-                <a href="#holiday-ideas" class="mobile-nav-link text-gray-800 hover:text-black font-semibold">Holiday Ideas</a>
-                <a href="#packages" class="mobile-nav-link text-gray-800 hover:text-black font-semibold">Packages</a>
-                <a href="#places-to-stay" class="mobile-nav-link text-gray-800 hover:text-black font-semibold">Places to Stay</a>
-                <a href="#weekend-getaways" class="mobile-nav-link text-gray-800 hover:text-black font-semibold">Weekend Getaways</a>
-                <a href="#map" class="mobile-nav-link text-gray-800 hover:text-black font-semibold">Map</a>
-                <a href="#" class="mt-4 w-full text-center border-2 border-black text-black font-bold py-2 px-6 rounded-lg hover:bg-black hover:text-white transition-colors duration-300">
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white">
+        <nav class="flex flex-col items-center space-y-4 p-4 border-t border-gray-200">
+            <a href="#holiday-ideas" class="mobile-nav-link text-gray-800 hover:text-black font-semibold">Holiday Ideas</a>
+            <a href="#packages" class="mobile-nav-link text-gray-800 hover:text-black font-semibold">Packages</a>
+            <a href="#places-to-stay" class="mobile-nav-link text-gray-800 hover:text-black font-semibold">Places to Stay</a>
+            <a href="#weekend-getaways" class="mobile-nav-link text-gray-800 hover:text-black font-semibold">Weekend Getaways</a>
+            <a href="#map" class="mobile-nav-link text-gray-800 hover:text-black font-semibold">Map</a>
+            <a href="#"
+                class="mt-4 w-full text-center border-2 border-black text-black font-bold py-2 px-6 rounded-lg hover:bg-black hover:text-white transition-colors duration-300">
                 Login
-                </a>
-            </nav>
-            </div>
-        </header>
-        <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            var navbar = document.querySelector('.navbar');
-            setTimeout(function() {
-            navbar.style.opacity = '1';
-            navbar.style.transform = 'translateY(0)';
-            }, 100);
-        });
-        </script>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+    var navbar = document.querySelector('.navbar');
+    setTimeout(function () {
+        navbar.style.opacity = '1';
+        navbar.style.transform = 'translateY(0)';
+    }, 100);
+});
+</script>
+
 
         <!-- Landing Section -->
         <section class="relative h-screen flex items-center justify-center">
@@ -141,64 +188,50 @@
                 </div>
             </section>
             
-            <div class="below-cards">
-            <!-- Dynamic Content Sections with Background Images -->
-            <section id="holiday-ideas" class="relative border-radius:20px py-24 bg-absolute-image" style="background-image: url('mainlandscape.jpg') ;width: 90%; border-radius: 20px;">
-                <div class="absolute inset-0 bg-black opacity-60"></div>
-                <div class="relative container mx-auto text-center text-white px-6">
-                    <h2 class="text-4xl font-bold mb-4">Holiday Ideas</h2>
-                    <p class="text-xl max-w-3xl mx-auto">From meditation retreats in serene monasteries to adventurous river rafting and bird-watching tours, discover endless possibilities for your perfect Sikkimese holiday.</p>
-                </div>
-            </section>
-
-            <section id="places-to-stay" class="relative py-24 bg-absolute-image" style="background-image: url('2ndlandscape.jpg'); width: 90%; border-radius: 20px;">
-                <div class="absolute inset-0 bg-black opacity-60"></div>
-                <div class="relative container mx-auto text-center text-white px-6">
-                    <h2 class="text-4xl font-bold mb-4">Places to Stay</h2>
-                    <p class="text-xl max-w-3xl mx-auto">Find your ideal accommodation, from luxury resorts with panoramic Himalayan views to cozy, family-run homestays that offer an authentic taste of local hospitality.</p>
-                </div>
-            </section>
-
-            <section id="weekend-getaways" class="relative py-24 bg-absolute-image" style="background-image: url('3rdlandscape.jpg'); width: 90%; border-radius: 20px;">
-                <div class="absolute inset-0 bg-black opacity-60"></div>
-                <div class="relative container mx-auto text-center text-white px-6">
-                    <h2 class="text-4xl font-bold mb-4">Weekend Getaways</h2>
-                    <p class="text-xl max-w-3xl mx-auto">Short on time? Our curated weekend trips to destinations like Gangtok, Pelling, and Yuksom are perfect for a quick, refreshing escape to the mountains.</p>
-                </div>
-            </section>
+    <!-- Below Cards Container -->
+    <div class="belowcardscontainer relative z-30 mt-8 mb-8 flex flex-col ">
+        <div class="blwcards-box relative z-30 flex w-full mb-6">
+            <div class="blwcards-box1 mx-2">
+                <!-- Card content goes here -->
             </div>
+            <div class="blwcards-box2 mx-2">
+                <!-- Card content goes here -->
+            </div>
+            <div class="blwcards-box3 mx-2">
+                <!-- Card content goes here -->
+            </div>
+        </div>
+        <p class="cards-p text-gray-800 text-lg  rounded-xl px-6 py-4 shadow-md backdrop-blur-md">
+            Discover more packages and customize your Sikkim experience with us!
+        </p>
+        <p class="cards-p1 text-gray-800 text-lg  rounded-xl px-6 py-4 shadow-md backdrop-blur-md">Holiday Ideas</p>
+        <p class="cards-p2 text-gray-800 text-lg  rounded-xl px-6 py-4 shadow-md backdrop-blur-md">"Discover unforgettable holiday ideas with handpicked destinations, unique experiences, and travel inspiration for every season."</p>
+    </div>
 
-            <!-- Interactive Map Section -->
-            <section id="map" class="py-15 relative z-20 mt-12" ></section>
-                <div class="container mx-auto text-center px-6 relative z-20"style="backdrop-filter: blur(20px);">
-                    <h2 class="text-4xl font-bold mb-4 text-black">Interactive Monastery Map</h2>
-                    <p class="text-lg text-gray-800 mb-12 max-w-2xl mx-auto">Explore geo-tagged monastery locations, plan your travel routes, and discover nearby attractions. Click on the map to start your journey.</p>
-                    <div class="w-full h-96 md:h-[500px] rounded-lg shadow-xl overflow-hidden border-2 border-gray-200 relative z-20" ></div>
-                        <!-- Embedded Google Map of Sikkim -->
-                        <iframe 
-                            src="https://www.google.com/maps?q=Sikkim&output=embed"
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            class="w-full h-full"></iframe>
-                    </div>
-                </div>
-            </section>
+    <!-- Interactive Map Section -->
+    <section id="map" class="py-16 mt-16 relative z-20">
+        <div class="container mx-auto text-center px-6" style="backdrop-filter: blur(20px); border-radius: 20px;">
+            <h2 class="text-4xl font-bold mb-4 text-black">Interactive Monastery Map</h2>
+            <p class="text-lg text-gray-800 mb-12 max-w-2xl mx-auto">Explore geo-tagged monastery locations, plan your travel routes, and discover nearby attractions. Click on the map to start your journey.</p>
+            <div class="w-full h-96 md:h-[500px] rounded-lg shadow-xl overflow-hidden border-2 border-gray-200 relative">
+                <!-- Embedded Google Map of Sikkim -->
+                <iframe 
+                    src="https://www.google.com/maps?q=Sikkim&output=embed"
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="w-full h-full"></iframe>
+            </div>
+        </div>
+    </section>
 
         </main>
         
-        <!-- Footer -->
-        <footer class="bg-black text-white py-8">
-            <div class="container mx-auto text-center">
-                <p>&copy; 2025 GoSikkim. All Rights Reserved.</p>
-                <p class="text-sm text-gray-400 mt-2">Preserving Sikkim's cultural heritage for the world.</p>
-            </div>
-        </footer>
-
-    </div>
+    
+    
     <script src="main.js"></script>
 </body>
 </html>

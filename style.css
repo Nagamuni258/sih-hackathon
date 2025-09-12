@@ -23,7 +23,11 @@
             from { opacity: 0.4; }
             to { opacity: 1; }
         }
-
+.navbar1{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
 .navbar {
     background-color: rgba(177, 175, 175, 0.2);
     backdrop-filter: blur(12px);
@@ -47,24 +51,7 @@
     padding: 10px 24px;
     transition: background 0.2s, color 0.2s, border-radius 0.2s;
 }
-.below-cards {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    position: relative;
 
-
-}
-.holiday-ideas, .places-to-stay, .weekend-getaways {
-   background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-
-    
-}
 .containerpack{
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
@@ -102,3 +89,93 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+.belowcardscontainer {
+     background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+    z-index: 70;
+    width: 90%;
+    height: 1500px;
+    margin: 0 auto; /* This centers the div horizontally */
+  
+}
+.cards-p {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+}
+.cards-p1 {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    position: absolute;
+    top: 100px;
+}
+.cards-p2 {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    position: absolute;
+    top: 180px;
+}
+.blwcards-box {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    border-radius: 15px;
+    gap: 24px; /* Space between boxes */
+    justify-content: flex-start; /* Already aligns items to start */
+    align-items: flex-start; /* Add this to move boxes to top of parent */
+}
+
+.blwcards-box1,
+.blwcards-box2,
+.blwcards-box3 {
+    flex: 1 1 0;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 0; /* Remove offset so boxes start at top */
+    padding-top: 60px;
+}
+
+.gradio-container {
+    background-color: #121212;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+.gr-chat-interface {
+    height: 100vh !important;
+    display: flex;
+    flex-direction: column;
+}
+.gr-chatbot {
+    height: 75vh !important;
+    font-size: 16px;
+}
+textarea {
+    height: 60px !important;
+    font-size: 16px !important;
+}
+button {
+    font-size: 16px !important;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+

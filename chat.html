@@ -1,0 +1,81 @@
+# Simple single-file HTML template so the app runs without needing extra files on disk.
+SIMPLE_CHAT_HTML = """
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tourist Guide ChatBot</title>
+    <style>
+      body { font-family: Arial, sans-serif; max-width: 900px; margin: 2rem auto; padding: 1rem;
+        background: #f9f9f9; }
+      .chat { border: 1px solid #ddd; padding: 1rem; height: 60vh; overflow-y: auto; }
+      .message { margin: 0.5rem 0; }
+      .user { text-align: right; }
+      .assistant { text-align: left; }
+      .input-row { display:flex; gap: 0.5rem; margin-top: 1rem; }
+      input[type=text] { flex: 1; padding: 0.5rem; }
+      button { padding: 0.5rem 1rem; }
+      pre { white-space: pre-wrap; }
+    </style>
+  </head>
+  <body>
+    <h1>🧳 Tourist Guide ChatBot</h1>
+    <div class="chat" id="chat"></div>
+
+    <div class="input-row">
+      <input id="message" type="text" placeholder="Ask about places to visit, local food, or travel tips!" />
+      <button id="send">Send</button>
+    </div>
+
+    <script>
+      const chat = document.getElementById('chat');
+      const messageInput = document.getElementById('message');
+      const sendBtn = document.getElementById('send');
+
+      function appendMessage(text, cls) {
+        const div = document.createElement('div');
+        div.className = 'message ' + cls;
+        const pre = document.createElement('pre');
+        pre.textContent = text;
+        div.appendChild(pre);
+        chat.appendChild(div);
+        chat.scrollTop = chat.scrollHeight;
+      }
+
+      sendBtn.addEventListener('click', async () => {
+        const msg = messageInput.value.trim();
+        if (!msg) return;
+        appendMessage(msg, 'user');
+        messageInput.value = '';
+
+        try {
+          const res = await fetch('/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: msg })
+          });
+          const data = await res.json();
+          if (data.reply) {
+            appendMessage(data.reply, 'assistant');
+          } else if (data.error) {
+            appendMessage('Error: ' + data.error, 'assistant');
+          } else {
+            appendMessage('Unexpected response from server.', 'assistant');
+          }
+        } catch (err) {
+          appendMessage('Network error: ' + err.toString(), 'assistant');
+        }
+      });
+
+      // Allow pressing Enter to send
+      messageInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') sendBtn.click();
+      });
+
+      // Add an initial assistant message when the page loads
+      appendMessage('Hi — I\'m your tourist guide! Ask me about a city or place to get started.', 'assistant');
+    </script>
+  </body>
+</html>
+"""
