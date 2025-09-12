@@ -1,0 +1,104 @@
+/* Custom styles to enhance the theme */
+        body {
+            font-family:  sans-serif black;
+            background-color: #ffffff;
+            color: #2b2828; /* A slightly softer black */
+        }
+        /* Style for the fixed parallax-like background images */
+        .bg-fixed-image {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* Smooth scrolling behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Slideshow animation */
+        .slide-fade {
+            animation: fade 1.5s ease-in-out;
+        }
+        @keyframes fade {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+
+.navbar {
+    background-color: rgba(177, 175, 175, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    width: 90%;
+    top: 20px;
+    left: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    gap: 20px; /* Add space between a links */
+}
+.navbar a:hover {
+    background-color: #2b2828;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 24px;
+    transition: background 0.2s, color 0.2s, border-radius 0.2s;
+}
+.below-cards {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+
+
+}
+.holiday-ideas, .places-to-stay, .weekend-getaways {
+   background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    
+}
+.containerpack{
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    width: 80%;
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+            .navbar a {
+                margin: 10px 0;
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .navbar a {
+                font-size: 12px;
+            }
+        }
+        /* Additional custom styles can be added here */
+        .bg-absolute-image {
+            background-attachment: scroll;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
