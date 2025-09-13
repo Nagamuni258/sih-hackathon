@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">"
+   
 </head>
 <body class="bg-white" >
     <video src="bg.mp4" autoplay muted loop class="fixed inset-0 w-full h-full object-cover z-0"></video>
@@ -34,7 +35,7 @@
             <a href="#places-to-stay" class=" text-black font-bold py-2 px-2">Places to Stay</a>
             <a href="#weekend-getaways" class=" text-black font-bold py-2 px-2 ">Weekend Getaways</a>
             <a href="#map" class=" text-black font-bold py-2 px-2 ">Map</a>
-            <a href="#" class="  border-2 border-black text-black font-bold py-2 rounded-lg px-6 hover:bg-black hover:text-white transition-colors duration-300">
+            <a href="" class="  border-2 border-black text-black font-bold py-2 rounded-lg px-6 hover:bg-black hover:text-white transition-colors duration-300">
                 Login
             </a>
         </nav>
@@ -59,7 +60,7 @@
             <a href="#places-to-stay" class="mobile-nav-link text-gray-800 hover:text-black font-semibold">Places to Stay</a>
             <a href="#weekend-getaways" class="mobile-nav-link text-gray-800 hover:text-black font-semibold">Weekend Getaways</a>
             <a href="#map" class="mobile-nav-link text-gray-800 hover:text-black font-semibold">Map</a>
-            <a href="#"
+            <a href="login.html" target="_self"
                 class="mt-4 w-full text-center border-2 border-black text-black font-bold py-2 px-6 rounded-lg hover:bg-black hover:text-white transition-colors duration-300">
                 Login
             </a>
@@ -244,5 +245,31 @@ window.addEventListener('DOMContentLoaded', function () {
         </a>
     </div>
     <script src="main.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const faders = document.querySelectorAll(".fade-in");
+
+  const appearOptions = {
+    threshold: 0.2, // 20% visible
+    rootMargin: "0px 0px -50px 0px" // start fading slightly before fully in view
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); // optional: run once
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+});
+</script>
+
+
 </body>
 </html>

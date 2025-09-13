@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikkim Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 2rem;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .info-panel {
+            flex: 1 1 500px;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 1rem;
+        }
+
+        .auth-panel {
+            flex: 1 1 400px;
+            padding: 2.5rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 1rem;
+            position: relative;
+            overflow: hidden;
+            height: 500px;
+        }
+
+        .form-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s ease-in-out;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-content form {
+            width: 100%;
+        }
+        .form-content.login {
+            transform: translateX(0);
+        }
+
+        .form-content.signup {
+            transform: translateX(100%);
+        }
+
+        .auth-panel.signup-mode .login {
+            transform: translateX(-100%);
+        }
+
+        .auth-panel.signup-mode .signup {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <video src="bg.mp4" autoplay muted loop class="fixed inset-0 w-full h-full object-cover z-0"></video>
+    <div class="container">
+        <!-- Sikkim Tourism Info Panel -->
+        <div class="info-panel ">
+            <h1 class="text-4xl font-bold mb-4 text-black">Sikkim: A Himalayan Wonderland</h1>
+            <p class="mb-4  text-black leading-relaxed">
+                Nestled in the northeastern Himalayas, Sikkim is a land of breathtaking natural beauty and rich cultural heritage. From the towering peaks of Mt. Khangchendzonga, the world's third-highest mountain, to the serene lakes and lush valleys, the state offers a journey through diverse ecosystems. 
+            </p>
+            <p class=" text-black  leading-relaxed">
+                The landscape is dotted with ancient monasteries like Rumtek and Pemayangtse, echoing with Buddhist chants. Visitors can explore the vibrant capital, Gangtok, trek to high-altitude lakes such as Tsomgo and Gurudongmar, or simply soak in the peaceful atmosphere of its picturesque villages.
+            </p>
+            <p class="text-black leading-relaxed">
+                Sikkim's commitment to organic farming and eco-tourism makes it a pristine destination for those seeking tranquility and adventure. It's a place where every turn reveals a new wonder, a perfect blend of natural splendor and spiritual calm.
+            </p>
+        </div>
+
+        <!-- Login/Sign-up Panel -->
+        <div class="auth-panel">
+            <!-- Login Form -->
+            <div class="form-content login">
+                <h2 class="text-3xl font-bold mb-6 text-center">Log In</h2>
+                <form id="loginForm">
+                    <div class="mb-4">
+                        <label for="loginEmail" class="block text-gray-300 text-sm font-semibold mb-2">Email</label>
+                        <input type="email" id="loginEmail" class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500" placeholder="yourname@example.com" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="loginPassword" class="block text-gray-300 text-sm font-semibold mb-2">Password</label>
+                        <input type="password" id="loginPassword" class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="w-full bg-white text-black py-2 rounded-lg font-bold hover:bg-gray-200 transition-colors">
+                        Log In
+                    </button>
+                    <p class="mt-4 text-center text-gray-400">
+                        Don't have an account? <a href="#" id="showSignup" class="text-white font-semibold hover:underline">Sign Up</a>
+                    </p>
+                </form>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div class="form-content signup">
+                <h2 class="text-3xl font-bold mb-6 text-center">Sign Up</h2>
+                <form id="signupForm">
+                    <div class="mb-4">
+                        <label for="signupUsername" class="block text-gray-300 text-sm font-semibold mb-2">Username</label>
+                        <input type="text" id="signupUsername" class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500" placeholder="Choose a username" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="signupEmail" class="block text-gray-300 text-sm font-semibold mb-2">Email</label>
+                        <input type="email" id="signupEmail" class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500" placeholder="yourname@example.com" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="signupPassword" class="block text-gray-300 text-sm font-semibold mb-2">Password</label>
+                        <input type="password" id="signupPassword" class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="w-full bg-white text-black py-2 rounded-lg font-bold hover:bg-gray-200 transition-colors">
+                        Sign Up
+                    </button>
+                    <p class="mt-4 text-center text-gray-400">
+                        Already have an account? <a href="#" id="showLogin" class="text-white font-semibold hover:underline">Log In</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const authPanel = document.querySelector('.auth-panel');
+            const showSignupLink = document.getElementById('showSignup');
+            const showLoginLink = document.getElementById('showLogin');
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+
+            // Function to handle form submission (for demonstration)
+            const handleFormSubmit = (event) => {
+                event.preventDefault();
+                const formId = event.target.id;
+                
+                // Display a simple message instead of a browser alert
+                const messageBox = document.createElement('div');
+                messageBox.className = 'fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-800 text-white px-6 py-4 rounded-lg shadow-lg z-50';
+                
+                if (formId === 'loginForm') {
+                    messageBox.innerHTML = 'Login submitted! (This is a demo)';
+                } else if (formId === 'signupForm') {
+                    messageBox.innerHTML = 'Sign up submitted! (This is a demo)';
+                }
+                
+                document.body.appendChild(messageBox);
+
+                setTimeout(() => {
+                    messageBox.remove();
+                }, 2000);
+            };
+
+            loginForm.addEventListener('submit', handleFormSubmit);
+            signupForm.addEventListener('submit', handleFormSubmit);
+
+            // Function to switch between login and sign-up forms
+            const switchForms = (mode) => {
+                if (mode === 'signup') {
+                    authPanel.classList.add('signup-mode');
+                } else {
+                    authPanel.classList.remove('signup-mode');
+                }
+            };
+
+            showSignupLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchForms('signup');
+            });
+
+            showLoginLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchForms('login');
+            });
+        });
+    </script>
+
+</body>
+</html>
