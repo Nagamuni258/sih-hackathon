@@ -30,15 +30,19 @@
             max-width: 1400px;
             width: 100%;
         }
-
         .info-panel {
+          height: 500px;
+          width: 500px;
             flex: 1 1 500px;
             padding: 2rem;
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(255, 255, 255, 0.06);
             border-radius: 1rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
             margin: 1rem;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(log.jpg);
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            z-index: 70;
         }
 
         .auth-panel {
@@ -85,24 +89,24 @@
         .auth-panel.signup-mode .signup {
             transform: translateX(0);
         }
-    </style>
-</head>
-<body class="bg-gray-900 text-white">
+        .logo {
+            height: 200px;
+            width: 200px;
+            margin-bottom: 2rem;
+            z-index: 90;
+            position: absolute;
+            z-index: 70;
+        }
+          </style>
+      </head>
+      <body class="bg-gray-900 text-white">
 
-    <video src="bg.mp4" autoplay muted loop class="fixed inset-0 w-full h-full object-cover z-0"></video>
-    <div class="container">
+          <video src="bg.mp4" autoplay muted loop class="fixed inset-0 w-full h-full object-cover z-0"></video>
+          <div class="container ">
         <!-- Sikkim Tourism Info Panel -->
-        <div class="info-panel ">
-            <h1 class="text-4xl font-bold mb-4 text-black">Sikkim: A Himalayan Wonderland</h1>
-            <p class="mb-4  text-black leading-relaxed">
-                Nestled in the northeastern Himalayas, Sikkim is a land of breathtaking natural beauty and rich cultural heritage. From the towering peaks of Mt. Khangchendzonga, the world's third-highest mountain, to the serene lakes and lush valleys, the state offers a journey through diverse ecosystems. 
-            </p>
-            <p class=" text-black  leading-relaxed">
-                The landscape is dotted with ancient monasteries like Rumtek and Pemayangtse, echoing with Buddhist chants. Visitors can explore the vibrant capital, Gangtok, trek to high-altitude lakes such as Tsomgo and Gurudongmar, or simply soak in the peaceful atmosphere of its picturesque villages.
-            </p>
-            <p class="text-black leading-relaxed">
-                Sikkim's commitment to organic farming and eco-tourism makes it a pristine destination for those seeking tranquility and adventure. It's a place where every turn reveals a new wonder, a perfect blend of natural splendor and spiritual calm.
-            </p>
+        <div class="info-panel fade-in">
+  
+            
         </div>
 
         <!-- Login/Sign-up Panel -->
