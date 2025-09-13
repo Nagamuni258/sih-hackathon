@@ -16,67 +16,25 @@
     <video src="bg.mp4" autoplay muted loop class="fixed inset-0 w-full h-full object-cover z-0"></video>
 
 
-    <!-- App Container -->
-    <div class="min-h-screen">
+    
 
         <!-- Header with Integrated Navigation -->
        <header class="navbar z-50 flex justify-center" style="opacity:0; transform: translateY(-100px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4,0,0.2,1);">
     <div class="container flex flex-col justify-between items-center p-3 w-full">
 
-        <!-- Left Section: navbar1 -->
-        <div class="navbar1 flex flex-col space-y-2 relative">
-  <!-- Toggle Button -->
-  <button onclick="menu.hidden ^= 1">☰</button>
-
-  <!-- Main Menu -->
-  <div id="menu" hidden>
-    <a href="#holiday-ideas" class="text-gray-800 hover:text-black font-semibold">Holiday Ideas</a>
-    <a href="#packages" class="text-gray-800 hover:text-black font-semibold">Packages</a>
-
-    <!-- Dropdown -->
-    <div class="relative group">
-      <button class="text-gray-800 hover:text-black font-semibold flex items-center">
-        Destinations
-        <span class="ml-1">▼</span>
-      </button>
-      <div
-        class="absolute left-0 mt-1 hidden w-40 bg-white border rounded-lg shadow-lg group-hover:block z-10"
-      >
-        <a href="#mountains" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mountains</a>
-        <a href="#beaches" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Beaches</a>
-        <a href="#cities" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Cities</a>
-      </div>
-    </div>
-    <!-- End Dropdown -->
-
-    <a href="#places-to-stay" class="text-gray-800 hover:text-black font-semibold">Places to Stay</a>
-    <a href="#weekend-getaways" class="text-gray-800 hover:text-black font-semibold">Weekend Getaways</a>
-    <a href="#map" class="text-gray-800 hover:text-black font-semibold">Map</a>
-
-    <!-- Login Button -->
-    <a
-      href="#"
-      class="mt-4 w-full text-center border-2 border-black text-black font-bold py-2 px-6 rounded-lg hover:bg-black hover:text-white transition-colors duration-300"
-    >
-      Login
-    </a>
-  </div>
-</div>
-
-
         <!-- Logo -->
-        <div class="text-2xl md:text-3xl font-bold text-black">
+        <div class="logo-pos text-2xl md:text-3xl font-bold text-black">
             <a href="index.html" target="_self">GoSikkim</a>
         </div>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex flex-row items-center space-x-8">
-            <a href="#holiday-ideas" class="text-gray-800 hover:text-black font-semibold">Holiday Ideas</a>
-            <a href="#packages" class="text-gray-800 hover:text-black font-semibold">Packages</a>
-            <a href="#places-to-stay" class="text-gray-800 hover:text-black font-semibold">Places to Stay</a>
-            <a href="#weekend-getaways" class="text-gray-800 hover:text-black font-semibold">Weekend Getaways</a>
-            <a href="#map" class="text-gray-800 hover:text-black font-semibold">Map</a>
-            <a href="#" class="border-2 border-black text-black font-bold py-2 px-6 rounded-lg hover:bg-black hover:text-white transition-colors duration-300">
+        <nav class="navbar-settings hidden md:flex flex-row space-x-8">
+            <a href="#holiday-ideas" class="text-black font-bold py-2 px-2">Holiday Ideas</a>
+            <a href="#packages" class="text-black font-bold py-2 px-2 ">Packages</a>
+            <a href="#places-to-stay" class=" text-black font-bold py-2 px-2">Places to Stay</a>
+            <a href="#weekend-getaways" class=" text-black font-bold py-2 px-2 ">Weekend Getaways</a>
+            <a href="#map" class=" text-black font-bold py-2 px-2 ">Map</a>
+            <a href="#" class="  border-2 border-black text-black font-bold py-2 rounded-lg px-6 hover:bg-black hover:text-white transition-colors duration-300">
                 Login
             </a>
         </nav>
@@ -189,23 +147,74 @@ window.addEventListener('DOMContentLoaded', function () {
             </section>
             
     <!-- Below Cards Container -->
-    <div class="belowcardscontainer relative z-30 mt-8 mb-8 flex flex-col ">
-        <div class="blwcards-box relative z-30 flex w-full mb-6">
-            <div class="blwcards-box1 mx-2">
-                <!-- Card content goes here -->
-            </div>
-            <div class="blwcards-box2 mx-2">
-                <!-- Card content goes here -->
-            </div>
-            <div class="blwcards-box3 mx-2">
-                <!-- Card content goes here -->
-            </div>
-        </div>
-        <p class="cards-p text-gray-800 text-lg  rounded-xl px-6 py-4 shadow-md backdrop-blur-md">
+    <div class="belowcardscontainer relative">
+        <p class="cards-p text-gray-800 text-lg rounded-xl px-6 py-4 shadow-md backdrop-blur-md">
             Discover more packages and customize your Sikkim experience with us!
         </p>
-        <p class="cards-p1 text-gray-800 text-lg  rounded-xl px-6 py-4 shadow-md backdrop-blur-md">Holiday Ideas</p>
-        <p class="cards-p2 text-gray-800 text-lg  rounded-xl px-6 py-4 shadow-md backdrop-blur-md">"Discover unforgettable holiday ideas with handpicked destinations, unique experiences, and travel inspiration for every season."</p>
+         <p class="cards-p1 text-gray-800 text-lg rounded-xl px-6 py-4 shadow-md backdrop-blur-md">
+            Holiday Ideas
+        </p>
+        <p class="cards-p2 text-gray-800 text-lg rounded-xl px-6 py-4 shadow-md backdrop-blur-md">
+            Curated Packages
+        </p>
+        <div class="blwcards-box relative top-0 z-30">
+            <div class="blwcards-explore ">
+            <div class="blwcards-box1 ">
+                <img src="box1.jpg" alt="Adventure Trekking" class="w-full h-64 object-cover rounded-lg shadow-lg transform hover:scale-105  transition-all duration-300">
+                  <p class="box1-text">Adventure Trekking</p>
+                    <p class="box1-p"> Conquer the Himalayan trails with guided trekking expeditions to Kanchenjunga base camp, Goecha La, and pristine alpine valleys.</p>
+                <button href="" class="box1-btn absolute">
+                    Learn More
+                </button>
+                </div>
+            <div class="blwcards-box2 ">
+             <img src="box1.jpg" alt="Photography Tours" class="w-full h-64 object-cover rounded-lg shadow-lg transform hover:scale-105  transition-all duration-300">
+                  <p class="box1-text">Photography Tours</p>
+                    <p class="box1-p"> Capture the mystical beauty of ancient monasteries, prayer flags, and snow-capped peaks with professional photography guidance.</p>
+                <button href="" class="box1-btn absolute">
+                    Learn More
+                </button>
+            </div>
+            <div class="blwcards-box3 ">
+            <img src="box1.jpg" alt="Wellness Retreats" class="w-full h-64 object-cover rounded-lg shadow-lg transform hover:scale-105  transition-all duration-300">
+                  <p class="box1-text">Wellness Retreats</p>
+                    <p class="box1-p"> Find inner peace through meditation sessions in serene monasteries, yoga practices, and traditional healing therapies.</p>
+                <button href="" class="box1-btn absolute">
+                    Learn More
+                </button>
+            </div>
+            </div>
+       <div class="blwcards-boxes relative top-0 z-30">
+        <div class="blwcards-places ">
+            <div class="blwcards-box4 "></div>
+               <img src="place1.jpg" alt="Luxury Hotels" class="w-full h-64 object-cover rounded-lg shadow-lg transform hover:scale-105  transition-all duration-300">
+                  <p class="box1-text">Monastery Heritage Trail</p>
+                    <p class="box1-p">Explore ancient monasteries and Buddhist heritage across Sikkim</p>
+                <button href="" class="box1-btn absolute">
+                    Learn More
+                </button>
+            </div>
+            <div class="blwcards-box5 ">
+               <img src="place2.jpg" alt="Homestays" class="w-full h-64 object-cover rounded-lg shadow-lg transform hover:scale-105  transition-all duration-300">
+                  <p class="box1-text1">Tea Garden Experiences</p>
+                    <p class="box1-p">Discover Sikkim's renowned tea estates and scenic landscapes.</p>
+                <button href="" class="box1-btn absolute">
+                    Learn More
+                </button>
+            </div>
+            <div class="blwcards-box6 ">
+               <img src="place3.jpg" alt="Mountain Resorts" class="w-full h-64 object-cover rounded-lg shadow-lg transform hover:scale-105  transition-all duration-300">
+                  <p class="box1-text">Cultural Festival Tour</p>
+                    <p class="box1-p">Experience vibrant festivals and traditional celebration</p>
+                <button href="" class="box1-btn absolute">
+                    Learn More
+                </button>
+            </div>
+        </div>
+            </div>
+       </div>
+       </div>
+        </div>
     </div>
 
     <!-- Interactive Map Section -->
@@ -231,9 +240,9 @@ window.addEventListener('DOMContentLoaded', function () {
         </main>
     
         <a href="http://localhost:8501" class="fixed bottom-6 right-6 bg-black text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors duration-300 z-50" id="back-to-top" aria-label="Back to Top">
-            ↑
+            📖
         </a>
-
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
